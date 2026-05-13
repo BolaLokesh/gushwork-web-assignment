@@ -22,24 +22,25 @@
   <!-- 
     MAIN NAVIGATION BAR (separate, non-sticky)
     Located below sticky header, visible at all times
+    Navigation links now scroll to respective sections smoothly
   -->
   <nav class="main-nav">
     <div class="container">
       <div class="nav-wrapper">
         <div class="logo">✨ Gushwork</div>
         <div class="nav-links">
-          <a href="#">Platform</a>
-          <a href="#">Solutions</a>
-          <a href="#">Resources</a>
-          <a href="#">Contact</a>
+          <a href="#home">Platform</a>
+          <a href="#carousel">Solutions</a>
+          <a href="#features">Resources</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- Hero Section (first fold) -->
-    <section class="hero">
+    <!-- Hero Section (first fold) with ID for navigation -->
+    <section id="home" class="hero">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
@@ -59,8 +60,8 @@
       </div>
     </section>
 
-    <!-- Image Carousel Section with Zoom on Hover -->
-    <section class="carousel-section">
+    <!-- Image Carousel Section with Zoom on Hover - ID for Solutions navigation -->
+    <section id="carousel" class="carousel-section">
       <div class="container">
         <div class="section-label">Visual Showcase</div>
         <h2 class="section-title">Solutions that power AI-first visibility</h2>
@@ -130,8 +131,8 @@
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Features Section with ID for Resources navigation -->
+    <section id="features" class="features">
       <div class="container">
         <div class="section-label" style="text-align:center;">Why Gushwork</div>
         <h2 class="section-title" style="text-align:center; margin-bottom: 32px;">Built for the AI era of discovery</h2>
@@ -144,7 +145,8 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- Footer with ID for Contact navigation -->
+  <footer id="contact" class="footer">
     <div class="container">
       <p>© 2025 Gushwork — Reinventing B2B discovery for AI answer engines.</p>
       <p style="margin-top: 12px; font-size: 0.8rem;">Bengaluru & San Francisco</p>
