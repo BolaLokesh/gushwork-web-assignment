@@ -5,12 +5,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
   color: #111827;
   line-height: 1.4;
-  scroll-behavior: smooth;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
@@ -81,15 +84,34 @@ body {
   gap: 2rem;
 }
 
+/* ========== ENHANCED NAVIGATION HOVER EFFECTS (Underline Animation) ========== */
 .nav-links a {
   text-decoration: none;
   font-weight: 500;
   color: #1f2937;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 4px;
 }
 
 .nav-links a:hover {
   color: #0f67b3;
+}
+
+/* Animated underline effect on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0F67B3, #2C9CD4);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* ========== HERO SECTION ========== */
