@@ -8,12 +8,26 @@
 </head>
 <body>
 
-  <!-- Sticky Header -->
-  <header class="sticky-header" id="stickyHeader">
+  <!-- 
+    STICKY HEADER (appears when scrolling beyond first fold)
+    Positioned ABOVE the main navigation bar as per Figma spec
+    Only contains logo, appears on scroll down, hides on scroll up
+  -->
+  <div class="sticky-header" id="stickyHeader">
     <div class="container">
-      <div class="header-inner">
-        <div class="logo-sticky">✨ Gushwork</div>
-        <div class="nav-links-sticky">
+      <div class="sticky-logo">✨ Gushwork</div>
+    </div>
+  </div>
+
+  <!-- 
+    MAIN NAVIGATION BAR (separate, non-sticky)
+    Located below sticky header, visible at all times
+  -->
+  <nav class="main-nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">✨ Gushwork</div>
+        <div class="nav-links">
           <a href="#">Platform</a>
           <a href="#">Solutions</a>
           <a href="#">Resources</a>
@@ -21,7 +35,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <main>
     <!-- Hero Section (first fold) -->
