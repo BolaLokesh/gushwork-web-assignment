@@ -21,7 +21,7 @@ body {
   padding: 0 32px;
 }
 
-/* ---------- STICKY HEADER ---------- */
+/* ========== STICKY HEADER (appears above navbar when scrolling) ========== */
 .sticky-header {
   position: fixed;
   top: 0;
@@ -29,25 +29,44 @@ body {
   width: 100%;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  z-index: 1001; /* Above main nav */
   transform: translateY(-100%);
   transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #eef2f0;
 }
 
 .sticky-header.visible {
   transform: translateY(0);
 }
 
-.sticky-header .header-inner {
+.sticky-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #0A2647, #1B4A6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========== MAIN NAVIGATION BAR (separate, below sticky header) ========== */
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #eef2f0;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 18px 0;
 }
 
-.logo-sticky {
+.logo {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: -0.02em;
@@ -57,23 +76,23 @@ body {
   color: transparent;
 }
 
-.nav-links-sticky {
+.nav-links {
   display: flex;
   gap: 2rem;
 }
 
-.nav-links-sticky a {
+.nav-links a {
   text-decoration: none;
   font-weight: 500;
   color: #1f2937;
   transition: color 0.2s;
 }
 
-.nav-links-sticky a:hover {
+.nav-links a:hover {
   color: #0f67b3;
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ========== HERO SECTION ========== */
 .hero {
   padding: 80px 0 48px;
   background: #fafcff;
@@ -151,7 +170,7 @@ body {
   display: block;
 }
 
-/* ---------- CAROUSEL SECTION ---------- */
+/* ========== CAROUSEL SECTION ========== */
 .carousel-section {
   padding: 64px 0 80px;
   background: #ffffff;
@@ -260,7 +279,7 @@ body {
   transform: scale(0.96);
 }
 
-/* ---------- FEATURES SECTION ---------- */
+/* ========== FEATURES SECTION ========== */
 .features {
   padding: 48px 0 80px;
   background: #f9fafb;
@@ -288,7 +307,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* ---------- FOOTER ---------- */
+/* ========== FOOTER ========== */
 .footer {
   background: #0f172a;
   color: #cbd5e1;
@@ -296,7 +315,7 @@ body {
   text-align: center;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
   .hero-title { font-size: 2.5rem; }
@@ -308,8 +327,8 @@ body {
   .hero-content { text-align: center; }
   .hero-desc { max-width: 100%; }
   .hero-stats { justify-content: center; }
-  .nav-links-sticky { gap: 1rem; }
-  .logo-sticky { font-size: 1.2rem; }
+  .nav-links { gap: 1rem; }
+  .logo { font-size: 1.2rem; }
   .carousel-item { flex: 0 0 260px; }
   .section-title { font-size: 1.7rem; }
 }
@@ -320,8 +339,11 @@ body {
   .hero-stats { flex-direction: column; gap: 12px; align-items: center; }
   .carousel-item { flex: 0 0 240px; }
   .nav-btn { width: 40px; height: 40px; }
+  .nav-links { gap: 0.75rem; }
+  .nav-links a { font-size: 0.85rem; }
 }
 
+/* Custom scrollbar */
 .carousel-wrapper::-webkit-scrollbar {
   height: 6px;
 }
